@@ -2,8 +2,73 @@
 <html>
   <head>
     <title><%= title %></title>
+    <script
+      src="https://kit.fontawesome.com/b3348ae33f.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/css/home.css" />
   </head>
   <body>
-    <h1>Hello!!</h1>
+    <div class="full-container">
+      <h1 class="heading">TODO APP</h1>
+      <form action="/create-todo-list" method="post">
+        <div class="task-description-container">
+          <div class="description">
+            Description
+            <input
+              type="text"
+              name="description"
+              placeholder="What do you need to do?"
+              required
+            />
+          </div>
+        </div>
+        <div class="explanation-container">
+          <div class="categories">
+            Category
+            <select class="dropdown" name="categories">
+              <option>Choose a category</option>
+              <option>Personal</option>
+              <option>Work</option>
+              <option>School</option>
+              <option>Cleaning</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="due-date">
+            Due Date
+            <input type="date" id="calender" name="date" />
+          </div>
+        </div>
+        <!-- btns -->
+        <div class="btns">
+          <button class="add-btn"><i class="fas fa-plus"></i> ADD TASK</button>
+          <button class="delete-btn">
+            <i class="fas fa-trash"></i> DELETE TASK
+          </button>
+        </div>
+      </form>
+
+      <!-- Todo list added -->
+      <div class="todo-list-container">
+        <% for (let i of todolist) {%>
+        <div class="list-added">
+          <div class="left-side-list">
+            <input type="checkbox" name="checkbox" />
+
+            <div class="task-name-added">
+              <%= i.description %>
+              <div class="task-added-date">
+                <i class="fa-solid fa-calendar-days"></i><%= i.date %>
+              </div>
+            </div>
+          </div>
+          <div class="right-side-list">
+            <button class="task-for-btn"><%= i.catrgories %></button>
+          </div>
+        </div>
+        <%} %>
+      </div>
+    </div>
   </body>
 </html>

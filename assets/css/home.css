@@ -1,0 +1,161 @@
+/* body */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
+}
+
+/* full container */
+.full-container {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: grey;
+}
+
+/* heading of list */
+.heading {
+  color: grey;
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* Description of task */
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.task-description-container {
+  width: 100%;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px;
+  border-top: 1px solid rgb(96, 91, 91);
+}
+
+.description input {
+  border: none;
+}
+
+.description input:focus {
+  outline: 0ch;
+}
+
+/* categories */
+
+.explanation-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid rgb(96, 91, 91);
+}
+
+.categories,
+.due-date {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgb(96, 91, 91);
+  padding: 10px 10px;
+}
+
+.categories {
+  border-right: 1px solid rgb(96, 91, 91);
+}
+
+/* dropdown for categories */
+.dropdown {
+  border: none;
+  color: grey;
+  padding: 5px;
+}
+.dropdown:focus {
+  outline: 0;
+}
+.dropdown option {
+  height: 10px;
+  line-height: 7px;
+  border: none;
+}
+
+/* due-date */
+
+#calender {
+  border: none;
+  color: grey;
+}
+#calender:focus {
+  outline: 0;
+}
+
+/* btns */
+.btns {
+  margin: 2.5rem 0px;
+}
+.add-btn,
+.delete-btn {
+  color: white;
+  border: none;
+  padding: 12px 10px;
+}
+.add-btn {
+  background-color: rgb(52, 49, 49);
+}
+.delete-btn {
+  background-color: red;
+}
+
+/* todo list added */
+.todo-list-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.list-added {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgb(96, 91, 91);
+  padding: 10px 0;
+}
+.left-side-list {
+  display: flex;
+  flex-direction: row;
+  padding: 0px 15px;
+}
+
+.task-name-added {
+  display: flex;
+  flex-direction: column;
+  padding-left: 15px;
+}
+
+.task-added-date {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0;
+}
+/* button */
+.right-side-list {
+  padding-right: 20px;
+}
+.task-for-btn {
+  background-color: green;
+  color: white;
+  padding: 6px 10px;
+  border: none;
+  font-size: large;
+}
