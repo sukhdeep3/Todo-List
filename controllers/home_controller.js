@@ -1,3 +1,5 @@
+const Todo = require("../models/todo");
+
 const todolist = [
   {
     description: "Hello",
@@ -12,27 +14,26 @@ const todolist = [
 ];
 
 module.exports.home = function (req, res) {
-  return res.render("home", {
-    title: "Todo App",
-    todolist: todolist,
+  Todo.find({}, function (err, todolist) {
+    if (err) {
+      console.log("Error in updating data", err);
+      return;
+    }
+    return res.render("home", {
+      title: "Todo App",
+      todolist: todolist,
+    });
   });
 };
 
-// const todolist = [
-//   {
-//     description: "Hello",
-//     categories: "Personal",
-//     date: "today",
-//   },
-//   {
-//     description: "Hello2",
-//     categories: "Work",
-//     date: "tomorrow",
-//   },
-// ];
-
-// module.exports.createTodo = function (req, res) {
-//   return res.render("home", {
-//     todolist: todolist,
-//   });
-// };
+module.exports.createTodo = function (req, res) {
+  console.log(req.body);
+  Todo.create(req.body, function (err, todolist) {
+    if (err) {
+      console.log("Error in updating data", err);
+      return;
+    }
+    console.log("Updated", todolist);
+    return res.redirect("back");
+  });
+};

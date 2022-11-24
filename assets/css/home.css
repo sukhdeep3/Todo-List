@@ -136,6 +136,9 @@ form {
   flex-direction: row;
   padding: 0px 15px;
 }
+#checkbox:checked + label {
+  text-decoration: line-through;
+}
 
 .task-name-added {
   display: flex;

@@ -11,7 +11,7 @@
   <body>
     <div class="full-container">
       <h1 class="heading">TODO APP</h1>
-      <form action="/create-todo-list" method="post">
+      <form action="/create-todo" method="post">
         <div class="task-description-container">
           <div class="description">
             Description
@@ -42,9 +42,11 @@
         </div>
         <!-- btns -->
         <div class="btns">
-          <button class="add-btn"><i class="fas fa-plus"></i> ADD TASK</button>
+          <button type="submit" class="add-btn">
+            <i class="fas fa-plus"></i> ADD TASK
+          </button>
           <button class="delete-btn">
-            <i class="fas fa-trash"></i> DELETE TASK
+            <a href=""> <i class="fas fa-trash"></i> DELETE TASK </a>
           </button>
         </div>
       </form>
@@ -54,17 +56,16 @@
         <% for (let i of todolist) {%>
         <div class="list-added">
           <div class="left-side-list">
-            <input type="checkbox" name="checkbox" />
-
-            <div class="task-name-added">
+            <input id="checkbox" type="checkbox" name="checkbox" />
+            <label for="checkbox" class="task-name-added">
               <%= i.description %>
               <div class="task-added-date">
                 <i class="fa-solid fa-calendar-days"></i><%= i.date %>
               </div>
-            </div>
+            </label>
           </div>
           <div class="right-side-list">
-            <button class="task-for-btn"><%= i.catrgories %></button>
+            <button class="task-for-btn"><%= i.categories %></button>
           </div>
         </div>
         <%} %>

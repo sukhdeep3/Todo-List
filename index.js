@@ -1,11 +1,14 @@
 const express = require("express");
+const bodyParser = require("body-parser");
 const port = 8000;
 
+const db = require("./config/mongoose");
 const app = express();
 
-app.use("/", require("./routes"));
 app.use(express.urlencoded());
 app.use(express.static("assets"));
+app.use("/", require("./routes"));
+
 app.set("views", "./views");
 app.set("view engine", "ejs");
 
