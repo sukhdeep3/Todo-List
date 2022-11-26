@@ -16,18 +16,18 @@
           <div class="description">
             Description
             <input
+            required
               type="text"
               name="description"
               placeholder="What do you need to do?"
-              required
             />
           </div>
         </div>
         <div class="explanation-container">
           <div class="categories">
             Category
-            <select class="dropdown" name="categories">
-              <option>Choose a category</option>
+            <select required class="dropdown" name="categories">
+              <option disabled selected>Choose a category</option>
               <option>Personal</option>
               <option>Work</option>
               <option>School</option>
@@ -37,39 +37,50 @@
           </div>
           <div class="due-date">
             Due Date
-            <input type="date" id="calender" name="date" />
+            <input required type="date" id="calender" name="date" />
           </div>
         </div>
         <!-- btns -->
         <div class="btns">
-          <button type="submit" class="add-btn">
-            <i class="fas fa-plus"></i> ADD TASK
-          </button>
-          <button class="delete-btn">
-            <a href=""> <i class="fas fa-trash"></i> DELETE TASK </a>
-          </button>
-        </div>
+
+        <button type="submit" class="add-btn">
+          <i class="fas fa-plus"></i> ADD TASK
+        </button>
+
       </form>
+
+     
+      <form method="post" action="/delete_task">
+        <button id="delete-btn" type="submit" data-id="">
+            <i class="fas fa-trash"></i> DELETE TASK
+        </button>
+
+      </div>
 
       <!-- Todo list added -->
       <div class="todo-list-container">
         <% for (let i of todolist) {%>
         <div class="list-added">
           <div class="left-side-list">
-            <input id="checkbox" type="checkbox" name="checkbox" />
-            <label for="checkbox" class="task-name-added">
-              <%= i.description %>
-              <div class="task-added-date">
-                <i class="fa-solid fa-calendar-days"></i><%= i.date %>
-              </div>
-            </label>
+              <input id="checkbox" type="checkbox" name="ids" value="<%= i._id%>" />
+              <label for="checkbox" class="task-name-added">
+                <%= i.description %>
+                <div class="task-added-date">
+                  <i class="fa-solid fa-calendar-days"></i>
+                  <div class="fetch-date"><%= new Date(i.date).toLocaleString('default', { month: 'short' })%> <%=new Date(i.date).getDate()+1%>, <%=new Date(i.date).getFullYear() %></div>
+                </div>
+              </label>
           </div>
           <div class="right-side-list">
-            <button class="task-for-btn"><%= i.categories %></button>
+            <button class="task-for-btn" value="<%= i.categories %>"><%= i.categories %></button>
           </div>
         </div>
         <%} %>
       </div>
+    </form>
     </div>
+
+
+  <script type="text/javascript" src='/js/index.js'></script>
   </body>
 </html>

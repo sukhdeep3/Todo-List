@@ -37,3 +37,18 @@ module.exports.createTodo = function (req, res) {
     return res.redirect("back");
   });
 };
+
+module.exports.delete_task = async function (req, res) {
+  let ids = req.body.ids;
+
+  if (typeof ids === "String") {
+    ids = [ids];
+  }
+
+  let deleted = await Todo.deleteMany({
+    _id: {
+      $in: ids,
+    },
+  });
+  return res.redirect("back");
+};

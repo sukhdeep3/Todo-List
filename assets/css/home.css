@@ -22,6 +22,7 @@ body {
 .heading {
   color: grey;
   font-family: "Times New Roman", Times, serif;
+  margin-bottom: 0;
 }
 
 /* Description of task */
@@ -42,10 +43,20 @@ form {
   flex-direction: column;
   padding: 10px 10px;
   border-top: 1px solid rgb(96, 91, 91);
+  transition: background-color 0.4s;
+}
+
+.description:hover {
+  background-color: rgb(224, 224, 224);
 }
 
 .description input {
   border: none;
+  transition: background-color 0.4s;
+}
+
+.description:hover * {
+  background-color: rgb(224, 224, 224);
 }
 
 .description input:focus {
@@ -72,6 +83,14 @@ form {
 
 .categories {
   border-right: 1px solid rgb(96, 91, 91);
+  transition: background-color 0.4s;
+}
+.categories:hover {
+  background-color: rgb(224, 224, 224);
+}
+
+.categories:hover * {
+  background-color: rgb(224, 224, 224);
 }
 
 /* dropdown for categories */
@@ -79,6 +98,7 @@ form {
   border: none;
   color: grey;
   padding: 5px;
+  transition: background-color 0.4s;
 }
 .dropdown:focus {
   outline: 0;
@@ -91,9 +111,24 @@ form {
 
 /* due-date */
 
+.due-date {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  transition: background-color 0.4s;
+}
+
+.due-date:hover {
+  background-color: rgb(224, 224, 224);
+}
+.due-date:hover #calender {
+  background-color: rgb(224, 224, 224);
+}
+
 #calender {
   border: none;
   color: grey;
+  transition: background-color 0.4s;
 }
 #calender:focus {
   outline: 0;
@@ -101,20 +136,33 @@ form {
 
 /* btns */
 .btns {
-  margin: 2.5rem 0px;
+  padding: 25px 0;
+  display: flex;
 }
 .add-btn,
-.delete-btn {
+#delete-btn {
   color: white;
   border: none;
-  padding: 12px 10px;
+  padding: 12px 0;
+  width: 120px;
+  cursor: pointer;
 }
 .add-btn {
   background-color: rgb(52, 49, 49);
+  width: 100%;
+  padding: 0 20px;
+  margin-right: 3px;
 }
-.delete-btn {
-  background-color: red;
+#delete-btn {
+  background-color: rgb(210, 0, 0);
+  /* margin-left: 20px; */
+  margin-left: 3px;
 }
+/* #delete-btn a {
+  text-decoration: none;
+  color: white;
+  background-color: blue;
+} */
 
 /* todo list added */
 .todo-list-container {
@@ -122,6 +170,7 @@ form {
   display: flex;
   flex-direction: column;
 }
+
 .list-added {
   width: 100%;
   display: flex;
@@ -131,12 +180,18 @@ form {
   border-top: 1px solid rgb(96, 91, 91);
   padding: 10px 0;
 }
+
 .left-side-list {
+  color: grey;
   display: flex;
   flex-direction: row;
   padding: 0px 15px;
+  text-decoration: none;
 }
-#checkbox:checked + label {
+.left-side-list a {
+  z-index: 100;
+}
+#ids:checked + label {
   text-decoration: line-through;
 }
 
@@ -151,14 +206,18 @@ form {
   flex-direction: row;
   padding: 10px 0;
 }
+.fetch-date {
+  padding-left: 8px;
+}
 /* button */
 .right-side-list {
   padding-right: 20px;
 }
 .task-for-btn {
-  background-color: green;
+  /* background-color: green; */
   color: white;
-  padding: 6px 10px;
+  padding: 6px 0;
   border: none;
   font-size: large;
+  width: 90px;
 }
