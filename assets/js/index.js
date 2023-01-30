@@ -1,4 +1,6 @@
 const categoryList = document.querySelectorAll(".task-for-btn");
+const checkbox = document.querySelectorAll("#checkbox");
+let check = false;
 
 for (const i in categoryList) {
   console.log(categoryList[i]);
@@ -14,4 +16,3 @@ for (const i in categoryList) {
     categoryList[i].style.backgroundColor = "red";
   }
 }
-

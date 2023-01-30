@@ -27,7 +27,7 @@ module.exports.home = function (req, res) {
 };
 
 module.exports.createTodo = function (req, res) {
-  console.log(req.body);
+  // console.log(req.body);
   Todo.create(req.body, function (err, todolist) {
     if (err) {
       console.log("Error in updating data", err);
@@ -40,6 +40,7 @@ module.exports.createTodo = function (req, res) {
 
 module.exports.delete_task = async function (req, res) {
   let ids = req.body.ids;
+  // console.log(ids);
 
   if (typeof ids === "String") {
     ids = [ids];

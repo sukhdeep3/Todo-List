@@ -191,7 +191,7 @@ form {
 .left-side-list a {
   z-index: 100;
 }
-#ids:checked + label {
+.left-side-list input:checked + label {
   text-decoration: line-through;
 }
 

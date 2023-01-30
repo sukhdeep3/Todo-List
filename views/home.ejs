@@ -62,8 +62,8 @@
         <% for (let i of todolist) {%>
         <div class="list-added">
           <div class="left-side-list">
-              <input id="checkbox" type="checkbox" name="ids" value="<%= i._id%>" />
-              <label for="checkbox" class="task-name-added">
+              <input class="checkbox" type="checkbox" name="ids" id="<%= i._id%>" value="<%= i._id%>" />
+              <label for="<%= i._id%>" class="task-name-added">
                 <%= i.description %>
                 <div class="task-added-date">
                   <i class="fa-solid fa-calendar-days"></i>
